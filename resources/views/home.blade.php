@@ -4,19 +4,25 @@
 <!-- Header section -->
 <header class="header-section">
     <div class="logo">
-        <img src=" {{ asset("img/logo.png") }}" alt=""><!-- Logo -->
+        @foreach ($logo as $i)
+            <img id="logo1" src=" {{ asset("img/$i->logo") }}" alt="" ><!-- Logo -->
+        @endforeach
+        
     </div>
     <!-- Navigation -->
     <div class="responsive"><i class="fa fa-bars"></i></div>
     <nav>
         <ul class="menu-list">
-            <li class="active"><a href="{{ route("home") }}">Home</a></li>
-            <li><a href="{{ route("service") }}">Services</a></li>
-            <li><a href="{{ route("blog") }}">Blog</a></li>
-            <li><a href="{{ route("contact") }}">Contact</a></li>
+            @foreach ($navbar as $i)
+            <li class="active"><a href="{{ route("home") }}">{{ $i->link1 }}</a></li>
+            <li><a href="{{ route("service") }}">{{ $i->link2 }}</a></li>
+            <li><a href="{{ route("blog") }}">{{ $i->link3 }}</a></li>
+            <li><a href="{{ route("contact") }}">{{ $i->link4 }}</a></li>
             <li><a href="{{ route("login") }}">Login</a></li>
             <li><a href="{{ route("register") }}">Register</a></li>
             
+                
+            @endforeach
            
             
 

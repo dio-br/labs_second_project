@@ -2,7 +2,11 @@
 <div class="hero-section">
     <div class="hero-content">
         <div class="hero-center">
-            <img src="{{ asset("/img/big-logo.png") }}" alt="">
+            @foreach ($logo as $i)
+            <img class="logo2" src="{{ asset("/img/$i->logo") }}" alt="">
+                
+            @endforeach
+            
             <p>Get your freebie template now!</p>
         </div>
     </div>

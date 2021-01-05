@@ -9,11 +9,14 @@
     <div class="responsive"><i class="fa fa-bars"></i></div>
     <nav>
         <ul class="menu-list">
-            <li><a href="{{ route("home") }}">Home</a></li>
-            <li><a href="{{ route("service") }}">Services</a></li>
-            <li><a href="{{ route("blog") }}">Blog</a></li>
-            <li class="active"><a href="{{ route("contact") }}">Contact</a></li>
-            <li><a href="">Connected</a></li>
+            @foreach ($navbar as $i)
+            <li><a href="{{ route("home") }}">{{ $i->link1 }}</a></li>
+            <li><a href="{{ route("service") }}">{{ $i->link2 }}</a></li>
+            <li><a href="{{ route("blog") }}">{{ $i->link3 }}</a></li>
+            <li class="active"><a href="{{ route("contact") }}">{{ $i->link4 }}</a></li>
+            <li>Connected</li>
+                
+            @endforeach
             
             
         </ul>

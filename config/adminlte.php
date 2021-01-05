@@ -235,11 +235,22 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'Menu',
+            'url'         => 'admin/nav',
+            'icon'        => 'fas fa-list',
+            
+        ],
+        [
+            'text'        => 'Logo',
+            'url'         => 'admin/logo',
+            'icon'        => 'fab fa-apple',
+            
+        ],
+        [
+            'text'        => 'List user',
+            'url'         => 'admin/user',
+            'icon'        => 'far fa-fw fa-address-book',
+            
         ],
         ['header' => 'account_settings'],
         [
