@@ -3,7 +3,9 @@
 <!-- Header section -->
 <header class="header-section">
     <div class="logo">
-        <img class="logo1" src="{{ asset("img/logo.png") }}" alt=""><!-- Logo -->
+        @foreach ($logo as $i)
+            <img class="logo1" src="{{ asset("img/$i->logo") }}" alt=""><!-- Logo -->
+        @endforeach
     </div>
     <!-- Navigation -->
     <div class="responsive"><i class="fa fa-bars"></i></div>

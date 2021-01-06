@@ -2,9 +2,9 @@
 @section('content')
 <!-- Header section -->
 <header class="header-section">
-    <div class="logo">
-        <img class="logo1" src="{{ asset("img/$i->logo") }}" alt=""><!-- Logo -->
-    </div>
+        @foreach ($logo as $i)
+            <img class="logo1" src="{{ asset("img/$i->logo") }}" alt=""><!-- Logo -->
+        @endforeach
     <!-- Navigation -->
     <div class="responsive"><i class="fa fa-bars"></i></div>
     <nav>
