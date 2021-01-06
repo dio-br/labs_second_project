@@ -3,7 +3,7 @@
 <!-- Header section -->
 <header class="header-section">
     <div class="logo">
-        <img src="{{ asset("/img/logo.png") }}" alt=""><!-- Logo -->
+        <img class="logo1" src="{{ asset("/img/logo.png") }}" alt=""><!-- Logo -->
     </div>
     <!-- Navigation -->
     <div class="responsive"><i class="fa fa-bars"></i></div>
