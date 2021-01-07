@@ -253,9 +253,15 @@ return [
             
         ],
         [
-            'text'        => 'Home',
+            'text'        => 'Page Home',
             'url'         => 'admin/home',
             'icon'        => 'fas fa-home',
+            
+        ],
+        [
+            'text'        => 'Page Service',
+            'url'         => 'admin/service',
+            'icon'        => 'fas fa-concierge-bell',
             
         ],
         ['header' => 'account_settings'],

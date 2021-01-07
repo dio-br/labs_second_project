@@ -1,10 +1,10 @@
 
 	<!-- features section -->
-	<div class="team-section spad">
+	<div class="team-section spad" id="servicePrime">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="section-title">
-				<h2>Get in <span>the Lab</span> and  discover the world</h2>
+				<h2>{!! $str10 !!}</h2>
 			</div>
 			<div class="row">
 				<!-- feature item -->
@@ -79,7 +79,7 @@
 				</div>
 			</div>
 			<div class="text-center mt100">
-				<a href="" class="site-btn">Browse</a>
+				<a href="{{ route("service") }}#serviceCard" class="site-btn">{{ $servicePrime->boutton }}</a>
 			</div>
 		</div>
 	</div>

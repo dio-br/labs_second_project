@@ -2,15 +2,13 @@
 <div class="services-section spad">
     <div class="container">
         <div class="section-title dark">
-            @foreach ($titreService as $i)
-            <h2>{{ $i->titre }}</h2>
-                
-            @endforeach
+            
+            <h2>{!! $str6 !!}</h2>
             
         </div>
         <div class="row">
             <!-- single service -->
-            @foreach ($serviceHome as $i)
+            @foreach ($serviceHome->take(-9) as $i)
             <div class="col-md-4 col-sm-6">
                 <div class="service">
                     <div class="icon">
@@ -33,10 +31,10 @@
            
         </div>
         <div class="text-center">
-            @foreach ($titreService as $i)
-            <a href="{{ route("contact") }}" class="site-btn">{{ $i->boutton }}</a>
+            
+            <a href="{{ route("service") }}#servicePrime" class="site-btn">{{ $titreService->boutton }}</a>
                 
-            @endforeach
+            
             
         </div>
     </div>

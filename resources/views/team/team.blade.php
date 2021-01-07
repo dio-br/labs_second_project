@@ -3,9 +3,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="section-title">
-            @foreach ($titreTeam as $i)
-                <h2>{{ $i->titre }}</h2>
-            @endforeach
+            <h2>{!! $str8 !!}</h2>
             
         </div>
         <div class="row">

@@ -2,15 +2,18 @@
 <div class="promotion-section">
     <div class="container">
         <div class="row">
+            @foreach ($ready as $i)
             <div class="col-md-9">
-                <h2>Are you ready to stand out?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est.</p>
+                <h2>{{ $i->titre }}</h2>
+                <p>{{ $i->texte }}</p>
             </div>
             <div class="col-md-3">
                 <div class="promo-btn-area">
-                    <a href="" class="site-btn btn-2">Browse</a>
+                    <a href="" class="site-btn btn-2">{{ $i->boutton }}</a>
                 </div>
             </div>
+                
+            @endforeach
         </div>
     </div>
 </div>

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Http\Controllers\TitreTestimonialController;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,6 +26,10 @@ class DatabaseSeeder extends Seeder
         $this->call(TitreServiceSeeder::class);
         $this->call(TitreTeamSeeder::class);
         $this->call(ProfilTeamSeeder::class);
+        $this->call(TitreSloganSeeder::class);
+        $this->call(ReadySeeder::class);
+        $this->call(HomeContactSeeder::class);
+        $this->call(ServicePrimeSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

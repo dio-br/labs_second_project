@@ -1,6 +1,15 @@
 @extends('adminlte::page')
 @section('content')
 <section class="container">
+  <form method="POST" action="{{ route('logout') }}">
+    @csrf
+
+    <x-jet-responsive-nav-link href="{{ route('logout') }}" class="btn btn-danger"
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+        {{ __('Deconnexion') }}
+    </x-jet-responsive-nav-link>
+</form>
     <h1 class="text-center my-5">List Users</h1>
     <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create">Create</button>
                 @include('user.create')

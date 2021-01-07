@@ -5,13 +5,13 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-4">
                 <div class="section-title left">
-                   @foreach ($titreTestimonial as $i)
-                    <h2>{{ $i->titre }}</h2>
-                   @endforeach
+                   
+                    <h2>{!! $str4 !!}</h2>
+                   
                 </div>
                 <div class="owl-carousel" id="testimonial-slide">
                     <!-- single testimonial -->
-                    @foreach ($testimonial->take(6) as $i)
+                    @foreach ($testimonial->take(-6) as $i)
                     <div class="testimonial">
                         <span>‘​‌‘​‌</span>
                         <p>{{ $i->texte }}</p>

@@ -6,16 +6,22 @@
             <img class="logo2" src="{{ asset("/img/$i->logo") }}" alt="">
                 
             @endforeach
-    @foreach ($banner as $i)
-            <p>{{ $i->slogan }}</p>
+            @foreach ($titreSlogan as $i)
+            <p>{{ $i->titre }}</p>
+            @endforeach
         </div>
     </div>
+    
     <!-- slider -->
+    
     <div id="hero-slider" class="owl-carousel">
-        <div class="item  hero-item" data-bg="{{ asset("/img/$i->image1") }}"></div>
-        <div class="item  hero-item" data-bg="{{ asset("/img/$i->image2") }}"></div>
+        @foreach ($banner as $e)
+        <div class="item  hero-item" data-bg="{{ asset("/img/$e->image") }}"></div>
+
+        @endforeach
+
     </div>
         
-    @endforeach
+    
 </div>
 <!-- Intro Section -->

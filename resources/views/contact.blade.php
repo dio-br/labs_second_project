@@ -33,11 +33,14 @@
 <div class="page-top-section">
     <div class="overlay"></div>
     <div class="container text-right">
-        <h2>{{ $i->link4 }}</h2>
-        <div class="page-links">
-            <a href="{{ route("home") }}">{{ $i->link1 }}</a>
-            <span>{{ $i->link4 }}</span>
+        <div class="page-info">
+            <h2>{{ $i->link4 }}</h2>
+            <div class="page-links">
+                <a href="{{ route("home") }}">{{ $i->link1 }}</a>
+                <span>{{ $i->link4 }}</span>
+            </div>
         </div>
+            
     </div>
 </div>
      
