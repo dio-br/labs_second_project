@@ -6,14 +6,16 @@
             <img class="logo2" src="{{ asset("/img/$i->logo") }}" alt="">
                 
             @endforeach
-            
-            <p>Get your freebie template now!</p>
+    @foreach ($banner as $i)
+            <p>{{ $i->slogan }}</p>
         </div>
     </div>
     <!-- slider -->
     <div id="hero-slider" class="owl-carousel">
-        <div class="item  hero-item" data-bg="{{ asset("/img/01.jpg") }}"></div>
-        <div class="item  hero-item" data-bg="{{ asset("/img/02.jpg") }}"></div>
+        <div class="item  hero-item" data-bg="{{ asset("/img/$i->image1") }}"></div>
+        <div class="item  hero-item" data-bg="{{ asset("/img/$i->image2") }}"></div>
     </div>
+        
+    @endforeach
 </div>
 <!-- Intro Section -->

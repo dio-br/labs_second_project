@@ -252,6 +252,12 @@ return [
             'icon'        => 'far fa-fw fa-address-book',
             
         ],
+        [
+            'text'        => 'Home',
+            'url'         => 'admin/home',
+            'icon'        => 'fas fa-home',
+            
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

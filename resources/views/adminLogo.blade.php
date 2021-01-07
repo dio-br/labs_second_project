@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('content')
 <section class="container">
-    <h1 class="text-center">Logo</h1>
+    <h1 class="text-center my-5">Logo</h1>
     <table class="table">
         <thead>
           <tr>

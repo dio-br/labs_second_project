@@ -38,7 +38,10 @@
                 <label for="formGroupExampleInput2">Photo</label>
                 <input type="file" class="form-control w-75"  id="formGroupExampleInput2" name="photo" value="{{ $i->photo }}" >
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="d-flex w-100 justify-content-center my-5">
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
         </form>
       </div>
     </div>

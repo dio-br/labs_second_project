@@ -19,7 +19,10 @@
               <input type="file" class="form-control w-75" id="formGroupExampleInput" value="{{ $i->logo }}" name="logo">
             </div>
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="d-flex w-100 justify-content-center my-5">
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
         </form>
       </div>
     </div>

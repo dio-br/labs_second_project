@@ -12,6 +12,7 @@
                 </ul>
             </div>
             @endif
+            <h1 class="text-center mb-5 mt-5"> Create User</h1>
             <div class="form-group d-flex flex-column align-items-center">
               <label for="formGroupExampleInput">Name</label>
               <input type="text" class="form-control w-75" id="formGroupExampleInput" name="name">
@@ -38,7 +39,10 @@
                 <label for="formGroupExampleInput2">Photo</label>
                 <input type="file" class="form-control w-75" id="formGroupExampleInput2" name="photo">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="d-flex w-100 justify-content-center my-5">
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
         </form>
       </div>
     </div>

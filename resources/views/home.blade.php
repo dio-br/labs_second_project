@@ -5,7 +5,7 @@
 <header class="header-section">
     <div class="logo">
         @foreach ($logo as $i)
-            <img id="logo1" src=" {{ asset("img/$i->logo") }}" alt="" ><!-- Logo -->
+            <img class="logo1" src=" {{ asset("img/$i->logo") }}" alt="" ><!-- Logo -->
         @endforeach
         
     </div>

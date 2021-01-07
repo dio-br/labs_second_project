@@ -1,7 +1,7 @@
 <div class="modal fade edit2-{{ $i->id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <h1 class="text-center mb-5 mt-5"> Edit Navbar</h1>
+        <h1 class="text-center mb-5 mt-5"> Edit Menu</h1>
         <form action="/navbar/{{ $i->id }}" method="POST">
             @csrf
             @method("put")
@@ -31,7 +31,10 @@
                 <input type="text" class="form-control w-75" id="formGroupExampleInput2" value="{{ $i->link4 }}" name="link4">
             </div>
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="d-flex w-100 justify-content-center my-5">
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
         </form>
       </div>
     </div>
