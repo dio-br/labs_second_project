@@ -235,6 +235,12 @@ return [
             'can'  => 'manage-blog',
         ],
         [
+            'text'        => 'My Profil',
+            'url'         => 'admin/profil',
+            'icon'        => 'fas fa-user-alt',
+            
+        ],
+        [
             'text'        => 'Menu',
             'url'         => 'admin/nav',
             'icon'        => 'fas fa-list',

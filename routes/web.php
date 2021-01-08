@@ -16,6 +16,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IconePrimeController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\MyProfilController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\ProfilTeamController;
 use App\Http\Controllers\ReadyController;
@@ -53,6 +54,7 @@ Route::get("/admin/nav", [AdminNavController::class, "index"])->name("adminNav")
 Route::get("/admin/logo", [AdminLogoController::class, "index"])->name("adminLogo");
 Route::get("/admin/home", [AdminHomeController::class, "index"])->name("adminHome");
 Route::get("/admin/service", [AdminServiceController::class, "index"])->name("adminService");
+Route::get("/admin/profil", [MyProfilController::class, "index"])->name("myProfil");
 
 // Ressource
 Route::resource("/user", UserController::class);

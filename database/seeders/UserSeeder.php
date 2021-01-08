@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             "email" => "GuerfaBilal@outlook.com",
             "password" => Hash::make("GuerfaB1999"),
             "role_id" => 1,
-            "photo" => "./carotte",
+            "photo" => "avatarProfil.png",
             "created_at" => now()
         ]);
     }
