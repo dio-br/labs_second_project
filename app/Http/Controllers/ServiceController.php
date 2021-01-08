@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BlocRapid;
 use App\Models\HomeContact;
+use App\Models\IconePrime;
 use App\Models\Logo;
 use App\Models\Navbar;
 use App\Models\ServiceHome;
@@ -26,10 +28,13 @@ class ServiceController extends Controller
             $servicePrime = ServicePrime::first();
             $str9 = Str::of($servicePrime->titre)->replace('(', '<span>');
             $str10 = Str::of($str9)->replace(')', '</span>');
+            $iconePrime = IconePrime::all();
+            $blocRapid = BlocRapid::all();
             
-            return view("service2", compact("navbar","homeContact", "logo", "serviceHome", "titreService", "str5", "str6", "str9", "str10", "servicePrime"));
+            return view("service2", compact("blocRapid","iconePrime","navbar","homeContact", "logo", "serviceHome", "titreService", "str5", "str6", "str9", "str10", "servicePrime"));
         }
         else{
+            $iconePrime = IconePrime::all();
             $navbar = Navbar::all();
             $logo = Logo::all();
             $serviceHome = ServiceHome::paginate(9, ["*"], "serviceHome");
@@ -40,7 +45,8 @@ class ServiceController extends Controller
             $servicePrime = ServicePrime::first();
             $str9 = Str::of($servicePrime->titre)->replace('(', '<span>');
             $str10 = Str::of($str9)->replace(')', '</span>');
-            return view("service", compact("navbar", "logo","homeContact","serviceHome", "titreService", "str5", "str6", "str9", "str10", "servicePrime"));
+            $blocRapid = BlocRapid::all();
+            return view("service", compact("blocRapid","iconePrime","navbar", "logo","homeContact","serviceHome", "titreService", "str5", "str6", "str9", "str10", "servicePrime"));
         }
         
     }

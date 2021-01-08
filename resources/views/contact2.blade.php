@@ -12,6 +12,20 @@
     <nav>
     @foreach ($navbar as $i)
         <ul class="menu-list">
+            <li>
+                <form method="POST" action="{{ route('logout') }}"> 
+                    @csrf
+                    <x-jet-responsive-nav-link href="{{ route('logout') }}" class=""
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                        {{ __('Logout') }}
+                    </x-jet-responsive-nav-link>
+                </form>
+                
+            </li>
+        
+        </ul>
+        <ul class="menu-list">
             
             <li><a href="{{ route("home") }}">{{ $i->link1 }}</a></li>
             <li><a href="{{ route("service") }}">{{ $i->link2 }}</a></li>

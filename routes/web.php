@@ -7,11 +7,13 @@ use App\Http\Controllers\AdminNavController;
 use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BlocRapidController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IconePrimeController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\NavbarController;
@@ -26,6 +28,7 @@ use App\Http\Controllers\TitreSloganController;
 use App\Http\Controllers\TitreTeamController;
 use App\Http\Controllers\TitreTestimonialController;
 use App\Http\Controllers\UserController;
+use Database\Factories\IconePrimeFactory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -67,6 +70,8 @@ Route::resource("/titreSlogan", TitreSloganController::class);
 Route::resource("/ready", ReadyController::class);
 Route::resource("/homeContact", HomeContactController::class);
 Route::resource("servicePrime", ServicePrimeController::class);
+Route::resource("/iconePrime", IconePrimeController::class);
+Route::resource("/blocRapid", BlocRapidController::class);
 
 // Mail
 Route::post("/send-email", [MailController::class, "sendMail"]);

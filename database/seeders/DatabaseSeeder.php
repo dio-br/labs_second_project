@@ -30,6 +30,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ReadySeeder::class);
         $this->call(HomeContactSeeder::class);
         $this->call(ServicePrimeSeeder::class);
+        $this->call(IconePrimeSeeder::class);
+        $this->call(BlocRapidSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }
