@@ -1,7 +1,8 @@
 @extends('adminlte::page')
 @section('content')
 <section class="container">
-    <h1 class="text-center my-5">Menu</h1>
+    <div class="bg-dark rounded">
+      <h1 class="text-center my-5">Menu</h1>
     <table class="table">
         <thead>
           <tr>
@@ -29,6 +30,8 @@
           </tbody>
         @endforeach
       </table>
+
+    </div>
 
 </section>
     

@@ -18,14 +18,12 @@ class ProfilTeamSeeder extends Seeder
             "image" => "1.jpg",
             "prenom" => "Christine Williams",
             "fonction" => 'Project Manager',
-            "position" => "centre"
-
+        
         ]);
         DB::table("profil_teams")->insert([
             "image" => "2.jpg",
             "prenom" => "Christine Williams",
-            "fonction" => 'Junior Developper',
-            "position" => "coté"
+            "fonction" => 'CEO COMPANY',
             
 
         ]);
@@ -33,7 +31,6 @@ class ProfilTeamSeeder extends Seeder
             "image" => "3.jpg",
             "prenom" => "Christine Williams",
             "fonction" => 'Digital Designer',
-            "position" => "coté"
 
         ]);
     }

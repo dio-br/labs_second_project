@@ -30,6 +30,17 @@ h6 {
 	margin: 0;
 }
 
+.bg{
+	border: none;
+	padding: 15px 30px;
+	height: 51px;
+	float: left;
+    margin-right: 30px;
+    width: calc(100% - 211px);
+    background: #19cc93;
+    color: #fff;
+
+}
 h2 {
 	font-size: 36px;
 }

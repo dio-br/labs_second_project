@@ -1,7 +1,8 @@
 @extends('adminlte::page')
 @section('content')
-<section class="container">
+<section class="container pb-5">
     <h1 class="text-center my-5">Page Service</h1>
+  <div class="bg-dark rounded">
     <h1 class="text-center my-5">Service Prime Titre and Boutton</h1>
     <table class="table">
         <thead>
@@ -26,7 +27,7 @@
           </tbody>
         @endforeach
       </table>
-
+  </div>
     <h1 class="text-center my-5">Service Prime</h1>
     <table class="table">
         <thead>
@@ -52,6 +53,7 @@
           </tbody>
         @endforeach
       </table>
+  <div class="bg-dark rounded">
       <h1 class="text-center my-5">Blog Rapid</h1>
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create32">Create</button>
                   @include('blocRapid.create')
@@ -85,6 +87,7 @@
             </tbody>
           @endforeach
         </table>
+  </div>
 
 </section>
     

@@ -18,7 +18,6 @@ class CreateProfilTeamsTable extends Migration
             $table->string("image");
             $table->string("prenom");
             $table->string("fonction");
-            $table->string("position");
             $table->timestamps();
         });
     }

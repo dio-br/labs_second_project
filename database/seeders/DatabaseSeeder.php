@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-
+use App\Models\Footer;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -32,6 +32,10 @@ class DatabaseSeeder extends Seeder
         $this->call(ServicePrimeSeeder::class);
         $this->call(IconePrimeSeeder::class);
         $this->call(BlocRapidSeeder::class);
+        $this->call(ArticleSeeder::class);
+        $this->call(CommentaireSeeder::class);
+        $this->call(NewsletterSeeder::class);
+        $this->call(FooterSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

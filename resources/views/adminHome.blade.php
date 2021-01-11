@@ -1,31 +1,35 @@
 @extends('adminlte::page')
 @section('content')
-<section class="container">
-  <h1 class="text-center my-5">Page Home</h1>
-  <h1 class="text-center my-5">Banner Slogan</h1>
-  <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Slogan</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      @foreach ($titreSlogan as $i)
-      <tbody>
-          <tr>
-            <td>{{ $i->titre }}</td>
-            <td class="d-flex">
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit15-{{ $i->id }}">Edit</button>
-              @include('titreSlogan.edit')
-              
+<section class="container pb-5">
 
-            </td>
+  <h1 class="text-center my-5">Page Home</h1>
+   <div class="bg-dark rounded">
+    <h1 class="text-center my-5">Banner Slogan</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Slogan</th>
+            <th scope="col">Action</th>
           </tr>
-      </tbody>
-      @endforeach
-  </table>
+        </thead>
+        @foreach ($titreSlogan as $i)
+        <tbody>
+            <tr>
+              <td>{{ $i->titre }}</td>
+              <td class="d-flex">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit15-{{ $i->id }}">Edit</button>
+                @include('titreSlogan.edit')
+                
+
+              </td>
+            </tr>
+        </tbody>
+        @endforeach
+    </table>
+  </div>
+  
     <h1 class="text-center my-5">Banner Image</h1>
-    <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create0">Create Banner Image</button>
+    <button type="button" class="btn btn-warning mb-3" data-toggle="modal" data-target=".create0">Create Banner Image</button>
     @include('banner.create')
     <table class="table">
         <thead>
@@ -44,7 +48,7 @@
                 <form action="/banner/{{ $i->id }}" method="POST">
                   @csrf
                   @method("delete")
-                  <button class="btn btn-danger">Delelte</button>
+                  <button class="btn btn-danger">Delete</button>
                 </form>
                 
 
@@ -53,6 +57,7 @@
         </tbody>
         @endforeach
     </table>
+    <div class="bg-dark rounded">
     <h1 class="text-center my-5">Titre et Boutton Service</h1>
     <table class="table">
         <thead>
@@ -78,6 +83,7 @@
         </tbody>
         @endforeach
     </table>
+  </div>
 
     <h1 class="text-center my-5">Service</h1>
     <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create5">Create</button>
@@ -116,6 +122,7 @@
         </tbody>
         @endforeach
     </table>
+  <div class="bg-dark rounded">
 
     <h1 class="text-center my-5">About</h1>
     <table class="table">
@@ -150,6 +157,7 @@
         </tbody>
         @endforeach
     </table>
+  </div>
     <h1 class="text-center my-5">Titre Testimonial</h1>
     <table class="table">
         <thead>
@@ -175,6 +183,7 @@
         </tbody>
         @endforeach
     </table>
+  <div class="bg-dark rounded">
     <h1 class="text-center my-5">Testimonial Commentary</h1>
     <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create7">Create</button>
     @include('testimonial.create')
@@ -213,7 +222,7 @@
             
       @endforeach
     </table>
-
+  </div>
     <h1 class="text-center my-5">Titre Team</h1>
     
     <table class="table">
@@ -239,7 +248,7 @@
             
       @endforeach
     </table>
-
+  <div class="bg-dark rounded">
     <h1 class="text-center my-5">Profil Team</h1>
     <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create12">Create</button>
     @include('profilTeam.create')
@@ -279,6 +288,7 @@
             
       @endforeach
     </table>
+  </div>
     <h1 class="text-center my-5">Ready</h1>
     <table class="table">
         <thead>
@@ -309,6 +319,7 @@
     </table>
 
   </table>
+<div class="bg-dark rounded">
   <h1 class="text-center my-5">Contact</h1>
   <table class="table">
       <thead>
@@ -346,6 +357,7 @@
           
     @endforeach
   </table>
+</div>
 
 
 </section>

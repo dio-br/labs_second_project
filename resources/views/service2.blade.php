@@ -30,7 +30,8 @@
             <li class="active"><a href="{{ route("service") }}">{{ $i->link2 }}</a></li>
             <li><a href="{{ route("blog") }}">{{ $i->link3 }}</a></li>
             <li><a href="{{ route("contact") }}">{{ $i->link4 }}</a></li>
-            <li>Connected</li>
+            <li class="text-success">Connected</li>
+            <li><a href="{{ route("myProfil") }}">Settings</a></li>
             @endforeach
         </ul>
        

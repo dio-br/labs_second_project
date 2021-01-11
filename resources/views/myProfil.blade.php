@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('content')
 <section class="container">
-    <div class="row bg-dark d-flex flex-column">
+    <div class="row bg-dark d-flex flex-column rounded">
         <h1 class="text-center pt-3">My Profil</h1>
         <div class="d-flex align-items-center">
             <div class="col-4 p-2 d-flex justify-content-center">

@@ -62,7 +62,10 @@
 
 	<!-- Footer section -->
 	<footer class="footer-section">
-		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
+		@foreach ($footer as $i)
+		<h2>{{ $i->phrase }} <a href="https://colorlib.com" target="_blank">{{ $i->autor }}</a></h2>
+			
+		@endforeach
 	</footer>
 	<!-- Footer section end -->
 

@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @section('content')
 <section class="container">
+  
     <h1 class="text-center my-5">List Users</h1>
     <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create">Create</button>
                 @include('user.create')
@@ -39,6 +40,8 @@
           </tbody>
         @endforeach
       </table>
+
+   
 
 </section>
     

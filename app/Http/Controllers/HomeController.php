@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutContent;
 use App\Models\Banner;
+use App\Models\Footer;
 use App\Models\HomeContact;
 use App\Models\Logo;
 use App\Models\Navbar;
@@ -34,7 +35,7 @@ class HomeController extends Controller
             $testimonial = Testimonial::all();
             $titreService = TitreService::first();
             $titreTeam = TitreTeam::first();
-            $profilTeam = ProfilTeam::first();
+            $profilTeam = ProfilTeam::inRandomOrder()->get();
             $titreSlogan = TitreSlogan::all();
             $ready = Ready::all();
             $homeContact = HomeContact::all();
@@ -47,10 +48,16 @@ class HomeController extends Controller
             $str6 = Str::of($str5)->replace(')', '</span>');
             $str7 = Str::of($titreTeam->titre)->replace('(', '<span>');
             $str8 = Str::of($str7)->replace(')', '</span>');
-            return view("home2", compact("str7","str8","str6","str5","str3","str4","str","str2","homeContact","ready","titreSlogan","serviceCard","profilTeam","navbar","titreTeam", "logo", "banner", "serviceHome", "aboutContent", "titreTestimonial", "testimonial", "titreService"));
+            $footer = Footer::all();
+            $stop = 1;
+            $id = 0;
+            return view("home2", compact("id","stop","footer","str7","str8","str6","str5","str3","str4","str","str2","homeContact","ready","titreSlogan","serviceCard","profilTeam","navbar","titreTeam", "logo", "banner", "serviceHome", "aboutContent", "titreTestimonial", "testimonial", "titreService"));
 
         }
         else{
+            $id = 0;
+            $stop = 1;
+            $footer = Footer::all();
             $navbar = Navbar::all();
             $logo = Logo::all();
             $titreSlogan = TitreSlogan::all();
@@ -63,7 +70,7 @@ class HomeController extends Controller
             $testimonial = Testimonial::all();
             $titreService = TitreService::first();
             $titreTeam = TitreTeam::first();
-            $profilTeam = ProfilTeam::all();
+            $profilTeam = ProfilTeam::inRandomOrder()->get();
             $serviceCard = ServiceHome::all();
             $ready = Ready::all();
             $homeContact = HomeContact::all();
@@ -73,7 +80,7 @@ class HomeController extends Controller
             $str6 = Str::of($str5)->replace(')', '</span>');
             $str7 = Str::of($titreTeam->titre)->replace('(', '<span>');
             $str8 = Str::of($str7)->replace(')', '</span>');
-            return view("home", compact("str7","str8","str6","str5","str4","str3","str","str2","homeContact","ready","titreSlogan","serviceCard","profilTeam","navbar","titreTeam", "logo", "banner","serviceHome", "aboutContent", "titreTestimonial", "testimonial", "titreService"));
+            return view("home", compact("id","stop","footer","str7","str8","str6","str5","str4","str3","str","str2","homeContact","ready","titreSlogan","serviceCard","profilTeam","navbar","titreTeam", "logo", "banner","serviceHome", "aboutContent", "titreTestimonial", "testimonial", "titreService"));
         }
         
         

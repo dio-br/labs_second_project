@@ -41,13 +41,11 @@ class ProfilTeamController extends Controller
             "image" => "required",
             "prenom" => "required",
             "fonction" => "required",
-            "position" => "required"
         ]);
         $profilTeam->image = $request->file("image")->hashName();
         $request->file("image")->storePublicly("img/team", "public");
         $profilTeam->prenom = $request->prenom;
         $profilTeam->fonction = $request->fonction;
-        $profilTeam->position = $request->position;
         $profilTeam->save();
         return redirect()->route("adminHome");
     }
@@ -87,14 +85,12 @@ class ProfilTeamController extends Controller
             "image" => "required",
             "prenom" => "required",
             "fonction" => "required",
-            "position" => "required"
         ]);
         Storage::disk("public")->delete("img/team" . $profilTeam->image);
         $profilTeam->image = $request->file("image")->hashName();
         $request->file("image")->storePublicly("img/team", "public");
         $profilTeam->prenom = $request->prenom;
         $profilTeam->fonction = $request->fonction;
-        $profilTeam->position = $request->position;
         $profilTeam->save();
         return redirect()->route("adminHome");
     }
