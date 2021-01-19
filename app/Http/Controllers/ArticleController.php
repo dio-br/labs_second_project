@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Events\UserNewsletter;
 use App\Models\Article;
+use App\Models\Newsletter;
+use App\Models\User;
+use App\Notifications\ArticlePublished;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -39,25 +42,32 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $article = new Article();
+        $newsletter = Newsletter::all();
+        $user = User::all();
         $request->validate([
             "image" =>"required",
             "titre" =>"required",
-            "mois" => "required",
-            "jour" => "required",
-            "annee" => "required",
             "texte" => "required",
-            "description" => "required"
+            "description" => "required",
+            "tab" => "required",
+            "tab2" => "required"
         ]);
+        $article->verification_id = $request->verification_id;
         $article->image = $request->file("image")->hashName();
         $request->file("image")->storePublicly("img/blog", "public");
         $article->texte = $request->texte;
         $article->description = $request->description;
-        $article->jour = $request->jour;
-        $article->mois = $request->mois;
-        $article->annee = $request->annee;
         $article->titre = $request->titre;
         $article->user_id = Auth::id();
+        foreach($newsletter as $e){
+            $e->notify(new ArticlePublished($article));
+        }
+        foreach($user as $i){
+            $i->notify(new ArticlePublished($article));
+        }
         $article->save();
+        $article->tags()->attach($request->tab);
+        $article->categories()->attach($request->tab2);
         return redirect()->route("adminBlog");
 
     }
@@ -106,6 +116,8 @@ class ArticleController extends Controller
         $article->texte = $request->texte;
         $article->description = $request->description;
         $article->save();
+        $article->categories()->sync($request->tab2);
+        $article->tags()->sync($request->tab);
         return redirect()->route("adminBlog");
 
     }
@@ -119,7 +131,26 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         Storage::disk("public")->delete("img/" . $article->image);
+        $article->tags()->detach($article->tags);
+        $article->categories()->detach($article->categories);
         $article->delete();
         return redirect()->back();
+    }
+    public function sendArticle(Request $request, $id)
+    {
+
+        $article = Article::find($id);
+        $article->verification_id = $request->verification_id;
+
+        // $mails = Newsletter::all();
+
+        // foreach ($mails as $elem) {
+        //     $elem->notify(new messagePublished($newArticle));
+        // }
+
+        $article->save();
+
+        return redirect()->back();
+
     }
 }

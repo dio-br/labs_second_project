@@ -69,6 +69,7 @@ class HomeContactController extends Controller
      */
     public function update(Request $request, HomeContact $homeContact)
     {
+        $this->authorize("update", $homeContact);
         $request->validate([
             "titre1" => "required",
             "texte" => "required",

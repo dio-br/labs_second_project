@@ -15,7 +15,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
     /**
@@ -36,6 +36,7 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize("create", Banner::class);
         $banner = new Banner();
         $request->validate([
             "image" => "required",
@@ -78,6 +79,7 @@ class BannerController extends Controller
      */
     public function update(Request $request, Banner $banner)
     {
+        $this->authorize("update", Banner::class);
         $request->validate([
             "image" => "required",
             
@@ -98,6 +100,7 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner)
     {
+        $this->authorize("delete", Banner::class);
         Storage::disk("public")->delete("img/" . $banner->image);
         $banner->delete();
         return redirect()->back();

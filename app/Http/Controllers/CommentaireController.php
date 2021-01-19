@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Commentaire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentaireController extends Controller
 {
@@ -33,9 +35,19 @@ class CommentaireController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id, Request $request)
     {
-        //
+        $commentaire = new Commentaire;
+        $article = Article::find($id);
+        $request->validate([
+            "texte" => "required",
+        ]);
+        $commentaire->texte = $request->texte;
+        $commentaire->user_id = Auth::id();
+        $commentaire->article_id = $article->id;
+        $commentaire->save();
+        return redirect()->back();
+
     }
 
     /**

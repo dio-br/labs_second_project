@@ -17,11 +17,10 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string("image");
             $table->string("titre");
-            $table->string('jour');
-            $table->string('mois');
-            $table->string("annee");
             $table->text("texte");
             $table->text("description");
+            $table->unsignedBigInteger("verification_id");
+            $table->foreign("verification_id")->references("id")->on("verifications")->onDelete("cascade");
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
             $table->timestamps();

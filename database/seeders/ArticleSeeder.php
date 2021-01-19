@@ -17,12 +17,12 @@ class ArticleSeeder extends Seeder
         DB::table("articles")->insert([
             "image" => "blog-1.jpg",
             "titre" => "JUSTE A SIMPLE BLOG POST",
-            "jour" => "03",
-            "mois" => "Nov",
-            "annee" => "2017",
             "texte" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.",
             "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.",
-            "user_id" => "1"
+            "user_id" => 1,
+            "verification_id" => 2
+            
+            
 
 
         ]);

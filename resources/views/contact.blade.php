@@ -47,7 +47,8 @@
 @endforeach
 <!-- Page header end -->
 <!-- Google map -->
-<div class="map" id="map-area"></div>
+{{-- <div class="map" id="map-area"></div> --}}
+<div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="860" id="gmap_canvas" src="https://maps.google.com/maps?q={{ $address->address }}k&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:860px;width:100%;}</style><a href="https://google-map-generator.com"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:860px;width:100%;}</style></div></div>
 @include('contact.contact')
     
 @endsection

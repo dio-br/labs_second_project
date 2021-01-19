@@ -289,6 +289,12 @@ return [
             
         ],
         [
+            'text'        => 'Map',
+            'url'         => 'admin/map',
+            'icon'        => 'fas fa-map',
+            
+        ],
+        [
             'text'        => 'Return on Labs Website',
             'url'         => '/',
             'icon'        => 'far fa-compass',

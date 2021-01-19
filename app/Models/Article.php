@@ -11,20 +11,30 @@ class Article extends Model
     protected $fillable = [
         "image",
         "titre",
-        "jour",
-        "annee",
-        "mois",
         "texte",
         "description",
-        "user_id"
+        "tag_id",
+        "category_id",
+        "verification_id"
     ];
     protected $table = "articles";
-    public function roles()
-    {
-        return $this->belongsToMany(Tag::class);
-    }
 
     public function users(){
         return $this->belongsTo(User::class, "user_id", "id");
+    }
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class);
+    }
+    public function commentaires(){
+        return $this->hasMany(Commentaire::class);
+    }
+    public  function  verifications()
+    {
+        return  $this->belongsTo(Verification::class, "verification_id", "id");
     }
 }

@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class TagArticleSeeder extends Seeder
+class AddressSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +14,9 @@ class TagArticleSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table("addresses")->insert([
+            "address" => "molengeek"
+
+        ]);
     }
 }

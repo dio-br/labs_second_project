@@ -16,10 +16,8 @@ class CommentaireSeeder extends Seeder
     {
         DB::table("commentaires")->insert([
             "texte" => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
-            "jour"=> "03",
-            "mois" => "Nov",
-            "annee" => "2017",
-            "user_id" => 1
+            "user_id" => 1,
+            "article_id" => 1
             
         ]);
     }

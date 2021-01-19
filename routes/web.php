@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AboutContentController;
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminFooterController;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminLogoController;
+use App\Http\Controllers\AdminMapController;
 use App\Http\Controllers\AdminNavController;
 use App\Http\Controllers\AdminNewsletterController;
 use App\Http\Controllers\AdminServiceController;
@@ -14,6 +16,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlocRapidController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FooterController;
@@ -66,7 +69,8 @@ Route::get("/admin/profil", [MyProfilController::class, "index"])->name("myProfi
 Route::get("/admin/blog", [AdminBlogController::class, "index"])->name("adminBlog");
 Route::get("/admin/newsletter", [AdminNewsletterController::class, "index"])->name("adminNewsletter");
 Route::get("/admin/footer", [AdminFooterController::class, "index"])->name("adminFooter");
-Route::get("/blogpost", [BlogPostController::class, "index"])->name("blogpost");
+Route::get("/blogpost/{id}", [BlogPostController::class, "index"]);
+Route::get("/admin/map", [AdminMapController::class, "index"])->name("adminMap");
 
 
 // Ressource
@@ -88,14 +92,16 @@ Route::resource("servicePrime", ServicePrimeController::class);
 Route::resource("/iconePrime", IconePrimeController::class);
 Route::resource("/blocRapid", BlocRapidController::class);
 Route::resource("/article", ArticleController::class);
-Route::resource("/commentaire", CommentaireController::class);
+Route::post("/commentaire/{id}", [CommentaireController::class, "store"] );
 Route::resource("/newsletter", NewsletterController::class);
 Route::resource("/footer", FooterController::class);
-// Route::resource("/blogpost", BlogPostController::class);
+Route::resource("/address", AddressController::class);
+Route::resource("/category", CategoryController::class);
 
 
 // Mail
 Route::post("/send-email", [MailController::class, "sendMail"]);
+Route::post('/send-article/{id}', [ArticleController::class, 'sendArticle']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\Footer;
 use App\Models\HomeContact;
 use App\Models\Logo;
@@ -17,7 +18,8 @@ class ContactController extends Controller
             $logo = Logo::all();
             $homeContact = HomeContact::all();
             $footer = Footer::all();
-            return view("contact2", compact("footer","navbar", "logo", "homeContact"));
+            $address = Address::first();
+            return view("contact2", compact("footer","navbar", "logo", "homeContact", "address"));
 
         }
         else{
@@ -25,7 +27,8 @@ class ContactController extends Controller
             $navbar = Navbar::all();
             $logo = Logo::all();
             $homeContact = HomeContact::all();
-            return view("contact", compact("footer","navbar", "logo", "homeContact"));
+            $address = Address::first();
+            return view("contact", compact("footer","navbar", "logo", "homeContact", "address"));
         }
        
     }

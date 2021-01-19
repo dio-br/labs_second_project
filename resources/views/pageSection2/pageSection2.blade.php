@@ -4,80 +4,94 @@
         <div class="row">
             <div class="col-md-8 col-sm-7 blog-posts">
                 <!-- Single Post -->
-                @foreach ($article->take(1) as $i)
-                
                         <div class="single-post">
                             <div class="post-thumbnail">
-                                <img src="{{asset("img/blog/$i->image")}}" alt="">
+                                <img src="{{asset("img/blog/$article->image")}}" alt="">
                                 <div class="post-date">
-                                    <h2>{{ $i->jour }}</h2>
-                                    <h3>{{ $i->mois }} {{ $i->annee }}</h3>
+                                    <h2>{{ date("d") }}</h2>
+                                    <h3>{{ date("m-Y") }} </h3>
                                 </div>
                             </div>
                             <div class="post-content">
-                                <h2 class="post-title">{{ $i->titre }}</h2>
+                                <h2 class="post-title">{{ $article->titre }}</h2>
                                 <div class="post-meta">
-                                    <a href="">{{ $i->users->name }}</a>
-                                    <a href="">Design, Inspiration</a>
-                                    @foreach ($article->take(-1) as $i)
-                                    <a href="">{{ $i->id }} Comments</a>
+                                    <a href="">{{ $article->users->name }}</a>
+                                    <a href="">
+                                        @foreach ($article->tags as $i)
+                                            {{ $i->name }}
+                                        @endforeach
+                                    </a>
+                                   
+                                    <a href="">{{count($article->commentaires) }} Comments</a>
                                         
-                                    @endforeach
+                                    
                                 </div>
-                                <p>{{ $i->texte }}</p>
+                                <p>{{ $article->texte }}</p>
                                 
                         </div>
-                @endforeach
+               
                     <!-- Post Author -->
                     <div class="author">
                         <div class="avatar">
-                            <img src="img/{{ $i->users->photo }}">
+                            <img class="avatar" src="/img/{{ $article->users->photo }}">
                         </div>
                         <div class="author-info">
-                            <h2>{{ $i->users->name }}, <span>{{ $i->users->roles->name}}</span></h2>
-                            <p>{{ $i->description }}</p>
+                            <h2>{{ $article->users->name }}, <span>{{ $article->users->roles->name}}</span></h2>
+                            <p>{{ $article->description }}</p>
                         </div>
                     </div>
                     <!-- Post Comments -->
+                    
                     <div class="comments">
-                        {{-- <h2>Comments ({{ $commentaire[-1]->id }})</h2> --}}
+                        <h2>Comments ({{ count($article->commentaires) }})</h2>
+
                         <ul class="comment-list">
-                            @foreach ($commentaire as $i)
+                            @foreach ($article->commentaires as $i)
                             <li>
                                 <div class="avatar">
-                                    <img src="img/{{ $i->users->photo }}" alt="">
+                                    <img src="/img/{{ $i->users->photo }}" alt="">
                                 </div>
                                 <div class="commetn-text">
-                                    <h3>{{ $i->users->name }} | {{ $i->jour }} {{ $i->mois }}, {{ $i->annee }} | Reply</h3>
+                                    <h3>{{ $i->users->name }} | {{ date("d") }} {{ date("M") }}, {{ date("Y") }} | Reply</h3>
                                     <p>{{ $i->texte }}</p>
                                 </div>
                             </li>
-                                
                             @endforeach
+                                
+                            
                            
                         </ul>
                     </div>
                     <!-- Commert Form -->
+                    @if (Auth::user())
                     <div class="row">
                         <div class="col-md-9 comment-from">
                             <h2>Leave a comment</h2>
-                            <form class="form-class">
+                            <form class="form-class" action="/commentaire/{{ $article->id }}" method="POST">
+                                @csrf
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="text" name="name" placeholder="Your name">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" name="email" placeholder="Your email">
-                                    </div>
                                     <div class="col-sm-12">
-                                        <input type="text" name="subject" placeholder="Subject">
-                                        <textarea name="message" placeholder="Message"></textarea>
-                                        <button class="site-btn">send</button>
+                                        <textarea name="texte" placeholder="Message"></textarea>
+                                        <button type="submit" class="site-btn">Post your commentary</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    @else
+                    <div class="d-flex">
+                        <a class="btn btn-success" href="{{ route("login") }}">Login</a>
+                        <a class="btn btn-primary" href="{{ route("register") }}">Register</a>
+                    </div>
+                    @endif
+                    
+                  
+                        
+                   
+
+                   
+                    
+                    
                 </div>
             </div>
             <!-- Sidebar area -->

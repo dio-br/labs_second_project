@@ -3,7 +3,8 @@
 <section class="container pb-5">
 
   <h1 class="text-center my-5">Page Home</h1>
-   <div class="bg-dark rounded">
+  @if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+  <div class="bg-dark rounded">
     <h1 class="text-center my-5">Banner Slogan</h1>
     <table class="table">
         <thead>
@@ -57,6 +58,9 @@
         </tbody>
         @endforeach
     </table>
+      
+  @endif
+   
     <div class="bg-dark rounded">
     <h1 class="text-center my-5">Titre et Boutton Service</h1>
     <table class="table">
@@ -331,6 +335,7 @@
           <th scope="col">Info2</th>
           <th scope="col">Info3</th>
           <th scope="col">Info4</th>
+          <th scope="col">Boutton</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -347,8 +352,10 @@
           <td>{{ $i->info4}}</td>
           <td>{{ $i->boutton }}</td>
           <td class="d-flex">
+            @can('update', $i)
             <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit16-{{ $i->id }}">Edit</button>
             @include('homeContact.edit')
+            @endcan
             
 
           </td>

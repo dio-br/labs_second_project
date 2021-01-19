@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(VerificationSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(NavbarSeeder::class);
@@ -36,6 +37,11 @@ class DatabaseSeeder extends Seeder
         $this->call(CommentaireSeeder::class);
         $this->call(NewsletterSeeder::class);
         $this->call(FooterSeeder::class);
+        $this->call(AddressSeeder::class);
+        $this->call(TagSeeder::class);
+        $this->call(Article_TagSeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(Article_CategorySeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

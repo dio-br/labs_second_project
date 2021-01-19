@@ -10,14 +10,16 @@ class Commentaire extends Model
     use HasFactory;
     protected $fillable = [
         "user_id",
-        "jour",
-        "mois",
-        "annee",
-        "texte"
+        "texte",
+       
 
     ];
     protected $table = "commentaires";
     public function users(){
         return $this->belongsTo(User::class, "user_id", "id");
+    }
+    public function articles(){
+        return $this->belongsTo(Article::class, "article_id", "id");
         }
+
 }

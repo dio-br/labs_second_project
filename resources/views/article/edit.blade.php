@@ -22,30 +22,28 @@
                 <label for="formGroupExampleInput">Titre</label>
                 <input type="text" class="form-control w-75" id="formGroupExampleInput" value="{{ $i->titre }}" name="titre">
             </div>
-            {{-- <div class="form-group d-flex flex-column align-items-center">
-                <label for="formGroupExampleInput">Jour</label>
-                <select name="jour" value="{{ $i->jour }}">
-                    <option>{{ date("d") }}</option>
-
-                </select>
-            </div>
-            <div class="form-group d-flex flex-column align-items-center">
-                <label for="formGroupExampleInput">Mois</label>
-                <select name="mois" value="{{ $i->mois }}">
-                    <option>{{ date("m") }}</option>
-
-                </select>
-            </div>
-            <div class="form-group d-flex flex-column align-items-center">
-                <label for="formGroupExampleInput">Année</label>
-                <select name="annee" value="{{ $i->annee }}">
-                    <option>{{ date("Y") }}</option>
-
-                </select>
-            </div> --}}
+           
             <div class="form-group d-flex flex-column align-items-center">
                 <label for="formGroupExampleInput">Texte</label>
                 <input type="text" class="form-control w-75" id="formGroupExampleInput" value="{{ $i->texte }}" name="texte">
+            </div>
+            <div class="form-group d-flex flex-column align-items-center">
+                <label for="formGroupExampleInput">Tag_ID</label>
+                <select multiple="" name="tab[]" id="">
+                    @foreach ($tag as $e)
+                    <option value="{{ $e->id }}" {{ in_array($e->id, old("tab")?: []) ? "selected" : " " }}>{{ $e->name }}</option>
+                        
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group d-flex flex-column align-items-center">
+                <label for="formGroupExampleInput">Category_ID</label>
+                <select multiple="" name="tab2[]" id="">
+                    @foreach ($category as $i)
+                    <option value="{{ $i->id }}" {{ in_array($i->id, old("tab2")?: []) ? "selected" : " " }}>{{ $i->name }}</option>
+                        
+                    @endforeach
+                </select>
             </div>
             <div class="form-group d-flex flex-column align-items-center">
                 <label for="formGroupExampleInput">Description</label>

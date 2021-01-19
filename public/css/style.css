@@ -29,7 +29,10 @@ h6 {
 	padding: 0;
 	margin: 0;
 }
-
+.avatar{
+	width: 117px;
+	height: 117px;
+}
 .bg{
 	border: none;
 	padding: 15px 30px;
