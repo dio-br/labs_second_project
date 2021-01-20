@@ -28,12 +28,17 @@
               <input type="text" class="form-control w-75" id="formGroupExampleInput2" value="{{ Auth::user()->email }}" name="email">
             </div>
             <div class="form-group d-flex flex-column align-items-center">
+                @if (Auth::user()->role_id === 1)
                 <label for="formGroupExampleInput2" class="text-dark h4">Role_ID</label>
                 <select class="form-control w-75" name="role_id">
-                    @foreach ($roles as $i)
-                    <option value="{{ $i->id }}">{{ $i->name }}</option>
-                    @endforeach
-                </select>
+                  @foreach ($roles as $i)
+                  <option value="{{ $i->id }}">{{ $i->name }}</option>
+                  @endforeach
+                </select>  
+                @endif               
+
+
+                
             </div>
             <div class="form-group d-flex flex-column align-items-center">
                 <label for="formGroupExampleInput2" class="text-dark h4">Password</label>

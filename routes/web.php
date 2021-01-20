@@ -60,7 +60,7 @@ Route::get("/", [HomeController::class , "index"])->name("home");
 Route::get("/service", [ServiceController::class, "index"])->name("service");
 Route::get("/blog", [BlogController::class, "index"])->name("blog");
 Route::get("/contact", [ContactController::class, "index"])->name("contact");
-Route::get("/admin/user", [AdminUserController::class, "index"])->name("adminUser");
+Route::get("/admin/user", [AdminUserController::class, "index"])->middleware("check")->name("adminUser");
 Route::get("/admin/nav", [AdminNavController::class, "index"])->name("adminNav");
 Route::get("/admin/logo", [AdminLogoController::class, "index"])->name("adminLogo");
 Route::get("/admin/home", [AdminHomeController::class, "index"])->middleware("home")->name("adminHome");
