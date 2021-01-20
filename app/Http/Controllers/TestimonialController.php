@@ -36,6 +36,7 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize("create", Testimonial::class);
         $testimonial = new Testimonial();
         $request->validate([
             "texte" => "required",
@@ -83,6 +84,7 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
+        $this->authorize("update", $testimonial);
         $request->validate([
             "texte" => "required",
             "image" => "required",
@@ -107,6 +109,7 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
+        $this->authorize("delete", $testimonial);
         Storage::disk("public")->delete("img/avatar" . $testimonial->image);
         $testimonial->delete();
         return redirect()->back();

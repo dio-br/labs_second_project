@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Acces
+class Home
 {
     /**
      * Handle an incoming request.
@@ -24,7 +24,6 @@ class Acces
         else{
             return redirect()->back();
         }
-        
         
     }
 }

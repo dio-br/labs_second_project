@@ -63,14 +63,14 @@ Route::get("/contact", [ContactController::class, "index"])->name("contact");
 Route::get("/admin/user", [AdminUserController::class, "index"])->name("adminUser");
 Route::get("/admin/nav", [AdminNavController::class, "index"])->name("adminNav");
 Route::get("/admin/logo", [AdminLogoController::class, "index"])->name("adminLogo");
-Route::get("/admin/home", [AdminHomeController::class, "index"])->name("adminHome");
+Route::get("/admin/home", [AdminHomeController::class, "index"])->middleware("home")->name("adminHome");
 Route::get("/admin/service", [AdminServiceController::class, "index"])->name("adminService");
 Route::get("/admin/profil", [MyProfilController::class, "index"])->name("myProfil");
 Route::get("/admin/blog", [AdminBlogController::class, "index"])->name("adminBlog");
 Route::get("/admin/newsletter", [AdminNewsletterController::class, "index"])->name("adminNewsletter");
 Route::get("/admin/footer", [AdminFooterController::class, "index"])->name("adminFooter");
 Route::get("/blogpost/{id}", [BlogPostController::class, "index"]);
-Route::get("/admin/map", [AdminMapController::class, "index"])->name("adminMap");
+Route::get("/admin/map", [AdminMapController::class, "index"])->middleware("acces")->name("adminMap");
 
 
 // Ressource

@@ -16,6 +16,10 @@
 @section('auth_body')
     <form action="{{ $register_url }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
+        <div class="input-group mb-3">
+            <input type="file" name="photo">
+
+        </div>
 
         {{-- Name field --}}
         <div class="input-group mb-3">

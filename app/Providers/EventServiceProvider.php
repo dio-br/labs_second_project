@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\InscriptionEvent;
 use App\Events\UserNewsletter;
+use App\Listeners\InscriptionListener;
 use App\Listeners\UserNewsletterListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -17,9 +19,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        UserNewsletter::class => [
-            UserNewsletterListener::class,
-        ],
+        InscriptionEvent::class =>[
+            InscriptionListener::class,
+        ]
+        
+
+        
     ];
 
     /**

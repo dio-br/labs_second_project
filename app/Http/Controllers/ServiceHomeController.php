@@ -35,6 +35,7 @@ class ServiceHomeController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize("create", ServiceHome::class);
         $serviceHome = new ServiceHome();
         $request->validate([
             "icone" => "required",
@@ -79,6 +80,7 @@ class ServiceHomeController extends Controller
      */
     public function update(Request $request, ServiceHome $serviceHome)
     {
+        $this->authorize("update", $serviceHome);
         $request->validate([
             "icone" => "required",
             "titre" => "required",
@@ -99,6 +101,7 @@ class ServiceHomeController extends Controller
      */
     public function destroy(ServiceHome $serviceHome)
     {
+        $this->authorize("delete", $serviceHome);
         $serviceHome->delete();
         return redirect()->back();
     }

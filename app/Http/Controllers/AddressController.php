@@ -69,6 +69,7 @@ class AddressController extends Controller
      */
     public function update(Request $request, Address $address)
     {
+        
         $this->authorize("update", $address);
         $request->validate([
             "address" => "required"
