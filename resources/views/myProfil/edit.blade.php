@@ -35,6 +35,11 @@
                   <option value="{{ $i->id }}">{{ $i->name }}</option>
                   @endforeach
                 </select>  
+                @else
+                <label for="formGroupExampleInput2" class="text-dark h4">Role_ID</label>
+                <select class="form-control w-75" name="role_id">
+                  <option value="{{ Auth::user()->roles->id }}">{{ Auth::user()->roles->name }}</option>
+                </select>  
                 @endif               
 
 
