@@ -15,32 +15,34 @@ class TagSeeder extends Seeder
     public function run()
     {
         DB::table("tags")->insert([
+        [ 
             "name" =>"branding"
 
-        ]);
-        DB::table("tags")->insert([
+        ],
+        [
             "name" =>"design"
 
-        ]);
-        DB::table("tags")->insert([
+        ],
+        [
             "name" =>"video"
 
-        ]);
-        DB::table("tags")->insert([
+        ],
+        [
             "name" =>"identity"
 
-        ]);
-        DB::table("tags")->insert([
+        ],
+        [
             "name" =>"inspiration"
 
-        ]);
-        DB::table("tags")->insert([
+        ],
+        [
             "name" =>"photography"
 
-        ]);
-        DB::table("tags")->insert([
+        ],
+        [
             "name" =>"web-design"
 
+        ],
         ]);
     }
 }

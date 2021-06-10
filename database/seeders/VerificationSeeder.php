@@ -15,12 +15,13 @@ class VerificationSeeder extends Seeder
     public function run()
     {
         DB::table("verifications")->insert([
+        [ 
             "name" => "vérifié",
 
-        ]);
-        DB::table("verifications")->insert([
+        ],
+       [
             "name" => "pas-vérifié",
-
-        ]);
+       ],
+       ]);
     }
 }

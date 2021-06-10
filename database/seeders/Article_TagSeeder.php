@@ -17,16 +17,10 @@ class Article_TagSeeder extends Seeder
         DB::table("article_tag")->insert([
             "tag_id" => 1,
             "article_id" => 1,
-            
-
-
-        ]);
-        DB::table("article_tag")->insert([
+        ],
+        [
             "tag_id" => 2,
             "article_id" => 1,
-            
-
-
         ]);
     }
 }

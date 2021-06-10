@@ -15,19 +15,21 @@ class BlocRapidSeeder extends Seeder
     public function run()
     {
         DB::table("bloc_rapids")->insert([
+        [
             "image" => "card-1.jpg",
             "titre" => "Get in the Lab",
             "texte" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.."
-        ]);
-        DB::table("bloc_rapids")->insert([
+        ],
+      [
             "image" => "card-2.jpg",
             "titre" => "Project Online",
             "texte" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.."
-        ]);
-        DB::table("bloc_rapids")->insert([
+      ],
+      [
             "image" => "card-3.jpg",
             "titre" => "Smart Marketing",
             "texte" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.."
-        ]);
+      ],
+      ]);
     }
 }

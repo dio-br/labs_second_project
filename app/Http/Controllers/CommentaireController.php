@@ -90,8 +90,10 @@ class CommentaireController extends Controller
      * @param  \App\Models\Commentaire  $commentaire
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Commentaire $commentaire)
+    public function destroy($id, Commentaire $commentaire)
     {
-        //
+        $commentaire = Commentaire::find($id);
+        $commentaire->delete();
+        return redirect()->back();
     }
 }

@@ -17,7 +17,7 @@
               <td>{{ $i->autor }}</td>
               <td class="d-flex">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit50-{{ $i->id }}">Edit</button>
-                @include('footer.edit')
+                @include('backoff.footer.edit')
                 
 
               </td>

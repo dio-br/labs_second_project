@@ -20,7 +20,7 @@ class ArticlePublished extends Notification
      */
     public function __construct(Article $article)
     {
-        $this->article =$article;
+        $this->article =$article->name;
     }
 
     /**

@@ -16,14 +16,19 @@
     @endif>
 
     {{-- Small brand logo --}}
-    <img src="{{ asset(config('adminlte.logo_img', 'vendor/adminlte/dist/img/AdminLTELogo.png')) }}"
-         alt="{{ config('adminlte.logo_img_alt', 'AdminLTE') }}"
-         class="{{ config('adminlte.logo_img_class', 'brand-image img-circle elevation-3') }}"
-         style="opacity:.8">
+    {{-- <img src="{{ asset(config('adminlte.logo_img', 'vendor/adminlte/dist/img/AdminLTELogo.png')) }}" --}}
+         {{-- alt="{{ config('adminlte.logo_img_alt', 'AdminLTE') }}" --}}
+         {{-- class="{{ config('adminlte.logo_img_class', 'brand-image img-circle elevation-3') }}" --}}
 
+         <span>
+          <img src="{{asset('img/'. Auth::user()->photo)}}" class="{{ config('adminlte.logo_img_class', 'brand-image img-circle elevation-3') }}"
+          >  
+         </span>
+        
     {{-- Brand text --}}
     <span class="brand-text font-weight-light {{ config('adminlte.classes_brand_text') }}">
-        {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
+        {{-- {!! config('adminlte.logo', '<b>Admin</b>LTE') !!} --}}
+        {{Auth::user()->name}}
     </span>
 
 </a>

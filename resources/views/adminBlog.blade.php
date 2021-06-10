@@ -6,7 +6,7 @@
     
     <h1 class="text-center my-5">Article</h1>
     <button type="button" class="btn btn-warning mb-3" data-toggle="modal" data-target=".create47">Create Article</button>
-    @include('article.create')
+    @include('backoff.article.create')
     <table class="table">
         <thead>
           <tr>
@@ -19,46 +19,52 @@
             <th scope="col">Action</th>
           </tr>
         </thead>
-        @foreach ($article as $i)
+      @foreach ($article as $e)
         <tbody>
             <tr>
-              <td><img class="w-50" src="{{asset("img/blog/$i->image")}}"></td>
-              <td>{{ $i->texte }}</td>
+              <td><img class="w-50" src="{{asset("img/blog/$e->image")}}"></td>
+              <td>{{ $e->titre }}</td>
+              <td>{{ $e->texte }}</td>
               <td>
-                @foreach ($i->tags as $item)
-                 {{ $item->name }}
+                @foreach ($e->tags as $i)
+                 {{ $i->name }}
                     
                 @endforeach
               </td>
               <td>
-                @foreach ($i->categories as $item)
-                 {{ $item->name }}
+                @foreach ($e->categories as $i)
+                 {{ $i->name }}
                     
                 @endforeach
               </td>
-              <td>{{ $i->description }}</td>
+              <td>{{ $e->description }}</td>
               <td>
-                <form action="/send-article/{{ $i->id }}" method="post">
-                    @csrf
-                    <div class="form-group">
+                @if (Auth::user()->role_id === 1)
+                <form action="/send-article/{{ $e->id }}" method="post">
+                  @csrf
+                  
+                  <div class="form-group">
 
-                        <select class="form-control" name="verification_id" style="width: 10rem">
+                      <select class="form-control" name="verification_id" style="width: 10rem">
 
-                            @foreach ($verification as $i)
-                            <option value="{{ $i->id }}">{{ $i->name }}</option>
+                          @foreach ($verification as $a)
+                          <option value="{{ $a->id }}">{{ $a->name }}</option>
 
-                            @endforeach
+                          @endforeach
 
 
-                        </select>
-                        <button type="submit">Definir</button>
-                    </div>
-                </form>
+                      </select>
+                      <button type="submit">Definir</button>
+                  </div>
+              </form>
+                    
+                @endif
+                
             </td>
               <td class="d-flex">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit47-{{ $i->id }}">Edit</button>
-                @include('article.edit')
-                <form action="/article/{{ $i->id }}" method="POST">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit47-{{ $e->id }}">Edit</button>
+                @include('backoff.article.edit')
+                <form action="/article/{{ $e->id }}" method="POST">
                   @csrf
                   @method("delete")
                   <button class="btn btn-danger">Delete</button>
@@ -68,7 +74,7 @@
               </td>
             </tr>
         </tbody>
-        @endforeach
+      @endforeach
     </table>
   @endif
 
@@ -81,15 +87,15 @@
             <th scope="col">Action</th>
           </tr>
         </thead>
-        @foreach ($commentaire as $i)
+        @foreach ($commentaire as $b)
         <tbody>
             <tr>
-              <td>{{ $i->texte }}</td>
+              <td>{{ $b->texte }}</td>
               <td class="d-flex">
-                <form action="/commentaire/{{ $i->id }}" method="POST">
+                <form action="/commentaire/{{ $b->id }}" method="POST">
                   @csrf
-                  @method("delete")
-                  <button class="btn btn-danger">Delete</button>
+                
+                  <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
                 
 

@@ -19,7 +19,7 @@
               <td>{{ $i->titre }}</td>
               <td class="d-flex">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit15-{{ $i->id }}">Edit</button>
-                @include('titreSlogan.edit')
+                @include('backoff.titreSlogan.edit')
                 
 
               </td>
@@ -31,7 +31,7 @@
   
     <h1 class="text-center my-5">Banner Image</h1>
     <button type="button" class="btn btn-warning mb-3" data-toggle="modal" data-target=".create0">Create Banner Image</button>
-    @include('banner.create')
+    @include('backoff.banner.create')
     <table class="table">
         <thead>
           <tr>
@@ -45,7 +45,7 @@
               <td><img class="w-50" src="{{asset("img/$i->image")}}"></td>
               <td class="d-flex">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit4-{{ $i->id }}">Edit</button>
-                @include('banner.edit')
+                @include('backoff.banner.edit')
                 <form action="/banner/{{ $i->id }}" method="POST">
                   @csrf
                   @method("delete")
@@ -78,7 +78,7 @@
               <td>{{ $i->boutton }}</td>
               <td class="d-flex">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit10-{{ $i->id }}">Edit</button>
-                @include('titreService.edit')
+                @include('backoff.titreService.edit')
                 
                 
 
@@ -92,7 +92,7 @@
     <h1 class="text-center my-5">Service</h1>
     @can('create', App\Models\ServiceHome::class)
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create5">Create</button>
-      @include('service.create')
+      @include('backoff.service.create')
     @endcan
     
     <table class="table">
@@ -115,7 +115,7 @@
               <td class="d-flex">
                 @can('update', $i)
                      <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit5-{{ $i->id }}">Edit</button>
-                      @include('service.edit')
+                      @include('backoff.service.edit')
                   @endcan
                 
                 <form action="/serviceHome/{{ $i->id }}" method="POST">
@@ -192,7 +192,7 @@
               <td class="d-flex">
                 @can('update', $i)
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit7-{{ $i->id }}">Edit</button>
-                @include('titreTestimonial.edit')
+                @include('backoff.titreTestimonial.edit')
                 @endcan
                 
       
@@ -208,7 +208,7 @@
     <h1 class="text-center my-5">Testimonial Commentary</h1>
     @can('create', App\Models\Testimonial::class)
     <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create7">Create</button>
-    @include('testimonial.create')
+    @include('backoff.testimonial.create')
     @endcan
     
     <table class="table">
@@ -231,7 +231,7 @@
             <td class="d-flex">
               @can('update', $i)
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit8-{{ $i->id }}">Edit</button>
-                @include('testimonial.edit')
+                @include('backoff.testimonial.edit')
               @endcan
              
               <form action="/testimonial/{{ $i->id }}" method="POST">
@@ -268,7 +268,7 @@
             <td class="d-flex">
               @can('update', $i)
               <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit11-{{ $i->id }}">Edit</button>
-              @include('titreTeam.edit')
+              @include('backoff.titreTeam.edit')
               @endcan
              
 
@@ -284,7 +284,7 @@
     <h1 class="text-center my-5">Profil Team</h1>
     @can('create', App\Models\ProfilTeam::class)
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create12">Create</button>
-      @include('profilTeam.create')
+      @include('backoff.profilTeam.create')
     @endcan
     
     
@@ -308,10 +308,10 @@
             <td class="d-flex">
               @can('update', $i)
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit12-{{ $i->id }}">Edit</button>
-                @include('profilTeam.edit')
+                @include('backoff.profilTeam.edit')
               @endcan
               
-              <form action="/profilTeam/{{ $i->id }}" method="POST">
+              <form action="backoff/profilTeam/{{ $i->id }}" method="POST">
                 @csrf
                 @method("delete")
                 
@@ -350,7 +350,7 @@
             <td class="d-flex">
               @can('update', $i)
               <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit13-{{ $i->id }}">Edit</button>
-              @include('ready.edit')
+              @include('backoff.ready.edit')
 
               @endcan
             
@@ -395,7 +395,7 @@
           <td class="d-flex">
             @can('update', $i)
             <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit16-{{ $i->id }}">Edit</button>
-            @include('homeContact.edit')
+            @include('backoff.homeContact.edit')
             @endcan
             
 

@@ -65,6 +65,8 @@ class Kernel extends HttpKernel
         "acces" => \App\Http\Middleware\Acces::class,
         "home" => \App\Http\Middleware\Home::class,
         "check" => \App\Http\Middleware\Check::class,
+        "reda" => \App\Http\Middleware\Reda::class,
+        "membre" => \App\Http\Middleware\Membre::class,
 
     ];
 }

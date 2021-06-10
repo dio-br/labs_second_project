@@ -16,13 +16,14 @@
     @endif>
 
     {{-- Small brand logo --}}
-    <img src="{{ asset(config('adminlte.logo_img', 'vendor/adminlte/dist/img/AdminLTELogo.png')) }}"
-         alt="{{ config('adminlte.logo_img_alt', 'AdminLTE') }}"
-         class="{{ config('adminlte.logo_img_class', 'brand-image-xl') }} logo-xs">
+    {{-- <img src={{Auth::user()->photo}} --}}
+         {{-- alt="{{ config('adminlte.logo_img_alt', 'AdminLTE') }}" --}}
+         {{-- class="{{ config('adminlte.logo_img_class', 'brand-image-xl') }} logo-xs"> --}}
+         
+</a>
 
     {{-- Large brand logo --}}
-    <img src="{{ asset(config('adminlte.logo_img_xl')) }}"
-         alt="{{ config('adminlte.logo_img_alt', 'AdminLTE') }}"
-         class="{{ config('adminlte.logo_img_xl_class', 'brand-image-xs') }} logo-xl">
+    {{-- <img src="{{ asset(config('adminlte.logo_img_xl')) }}" --}}
+          {{-- alt="{{ config('adminlte.logo_img_alt', 'AdminLTE') }}" 
+          class="{{ config('adminlte.logo_img_xl_class', 'brand-image-xs') }} logo-xl"> --}}
 
-</a>

@@ -6,6 +6,7 @@ use App\Events\UserNewsletter;
 use App\Models\Article;
 use App\Models\Newsletter;
 use App\Models\User;
+use App\Models\Verification;
 use App\Notifications\ArticlePublished;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -59,12 +60,6 @@ class ArticleController extends Controller
         $article->description = $request->description;
         $article->titre = $request->titre;
         $article->user_id = Auth::id();
-        foreach($newsletter as $e){
-            $e->notify(new ArticlePublished($article));
-        }
-        foreach($user as $i){
-            $i->notify(new ArticlePublished($article));
-        }
         $article->save();
         $article->tags()->attach($request->tab);
         $article->categories()->attach($request->tab2);
@@ -136,19 +131,22 @@ class ArticleController extends Controller
         $article->delete();
         return redirect()->back();
     }
-    public function sendArticle(Request $request, $id)
+    public function sendArticle($id, Request $request)
     {
-
+        $newsletter = Newsletter::all();
+        $user = User::all();
         $article = Article::find($id);
         $article->verification_id = $request->verification_id;
-
-        // $mails = Newsletter::all();
-
-        // foreach ($mails as $elem) {
-        //     $elem->notify(new messagePublished($newArticle));
-        // }
-
         $article->save();
+        if ($article->verifications->name === "vérifié"){
+            foreach($newsletter as $e){
+            
+                $e->notify(new ArticlePublished($article));
+            }
+            foreach($user as $i){
+                $i->notify(new ArticlePublished($article));
+            }
+        }
 
         return redirect()->back();
 

@@ -4,7 +4,7 @@
   
     <h1 class="text-center my-5">List Users</h1>
     <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create">Create</button>
-                @include('user.create')
+                @include('backoff.user.create')
     <table class="table">
         <thead>
           <tr>
@@ -28,7 +28,7 @@
               <td><img class="w-75" src="{{asset("img/$i->photo") }}" alt=""></td>
               <td class="d-flex">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit-{{ $i->id }}">Edit</button>
-                @include('user.edit')
+                @include('backoff.user.edit')
                 <form action="/user/{{ $i->id }}" method="POST">
                   @csrf
                   @method("delete")

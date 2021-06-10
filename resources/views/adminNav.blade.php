@@ -22,7 +22,7 @@
               <td>{{ $i->link4 }}</td>
               <td class="d-flex">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit2-{{ $i->id }}">Edit</button>
-                @include('navbar.edit')
+                @include('backoff.navbar.edit')
                 
 
               </td>

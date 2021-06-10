@@ -4,10 +4,10 @@
         <div class="row">
             <!-- Single Card -->
             @foreach ($blocRapid->take(-3) as $i)
-            <div class="col-md-4 col-sm-6">
+            <div class="gg col-md-4 col-sm-6">
                 <div class="sv-card">
                     <div class="card-img">
-                        <img src="{{ asset("/img/$i->image") }}" alt="">
+                        <img class="lolo" src="{{ asset("/img/$i->image") }}" alt="">
                     </div>
                     <div class="card-text">
                         <h2>{{ $i->titre }}</h2>

@@ -15,7 +15,7 @@
               <td><img class="w-25" src="{{asset("img/$i->logo")}}"></td>
               <td class="d-flex">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit3-{{ $i->id }}">Edit</button>
-                @include('logo.edit')
+                @include('backoff.logo.edit')
                 
 
               </td>

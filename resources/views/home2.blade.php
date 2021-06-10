@@ -1,4 +1,4 @@
-@extends('templates.structure')
+@extends('templates.index')
 
 @section('content')
 <!-- Header section -->

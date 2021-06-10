@@ -23,6 +23,7 @@ class CreateArticlesTable extends Migration
             $table->foreign("verification_id")->references("id")->on("verifications")->onDelete("cascade");
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
+            
             $table->timestamps();
         });
     }

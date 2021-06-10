@@ -53,7 +53,7 @@ class ProfilTeamPolicy
      */
     public function update(User $user, ProfilTeam $profilTeam)
     {
-        return in_array($user->role_id,[2]);
+        return in_array($user->role_id,[1,2]);
     }
 
     /**
@@ -65,7 +65,7 @@ class ProfilTeamPolicy
      */
     public function delete(User $user, ProfilTeam $profilTeam)
     {
-        return in_array($user->role_id,[2]);
+        return in_array($user->role_id,[1,2]);
     }
 
     /**

@@ -35,7 +35,7 @@ class VerificationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**

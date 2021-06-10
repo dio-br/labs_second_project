@@ -18,7 +18,7 @@
                <td class="d-flex">
                 @can('update', $i)
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit42-{{ $i->id }}">Edit</button>
-                 @include('map.edit')
+                 @include('backoff.map.edit')
                
                 @endcan
                  

@@ -1,4 +1,4 @@
-@extends('templates.structure')
+@extends('templates.index')
 @section('content')
 <!-- Header section -->
 <header class="header-section">
@@ -16,8 +16,8 @@
            <li class="active"><a href="{{ route("service") }}">{{ $i->link2 }}</a></li>
            <li><a href="{{ route("blog") }}">{{ $i->link3 }}</a></li>
            <li><a href="{{ route("contact") }}">{{ $i->link4 }}</a></li>
-           <li><a href="{{ route("login") }}">Login</a></li>
-           <li><a href="{{ route("register") }}">Register</a></li>
+           {{-- <li><a href="{{ route("login") }}">Login</a></li>
+           <li><a href="{{ route("register") }}">Register</a></li> --}}
                
            @endforeach
         

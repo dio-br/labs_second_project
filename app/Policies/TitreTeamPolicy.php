@@ -53,7 +53,7 @@ class TitreTeamPolicy
      */
     public function update(User $user, TitreTeam $titreTeam)
     {
-        return in_array($user->role_id,[2]);
+        return in_array($user->role_id,[1,2]);
     }
 
     /**

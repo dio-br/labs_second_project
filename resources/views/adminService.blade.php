@@ -19,7 +19,7 @@
               <td>{{ $i->boutton }}</td>
               <td class="d-flex">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit30-{{ $i->id }}">Edit</button>
-                @include('servicePrime.edit')
+                @include('backoff.servicePrime.edit')
                 
 
               </td>
@@ -45,7 +45,7 @@
               <td><i class="h1 {{ $i->icone }}"></i></td>
               <td class="d-flex">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit31-{{ $i->id }}">Edit</button>
-                @include('iconePrime.edit')
+                @include('backoff.iconePrime.edit')
                 
 
               </td>
@@ -56,7 +56,7 @@
   <div class="bg-dark rounded">
       <h1 class="text-center my-5">Blog Rapid</h1>
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".create32">Create</button>
-                  @include('blocRapid.create')
+                  @include('backoff.blocRapid.create')
       <table class="table">
           <thead>
             <tr>
@@ -73,7 +73,7 @@
                 <td>{{ $i->texte }}</td>
                 <td class="d-flex">
                   <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit32-{{ $i->id }}">Edit</button>
-                  @include('blocRapid.edit')
+                  @include('backoff.blocRapid.edit')
                   <form action="/blocRapid/{{ $i->id }}" method="POST">
                     @csrf
                     @method("delete")
