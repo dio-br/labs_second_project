@@ -22,14 +22,5 @@ class ContactController extends Controller
             return view("contact2", compact("footer","navbar", "logo", "homeContact", "address"));
 
         }
-        else{
-            $footer = Footer::all();
-            $navbar = Navbar::all();
-            $logo = Logo::all();
-            $homeContact = HomeContact::all();
-            $address = Address::first();
-            return view("contact", compact("footer","navbar", "logo", "homeContact", "address"));
-        }
-       
     }
 }

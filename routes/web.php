@@ -45,6 +45,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
+// route pour front end
 
 Route::get("/", [HomeController::class , "index"])->name("home");
 
@@ -54,7 +55,7 @@ Route::get("/blog", [BlogController::class, "index"])->name("blog");
 
 Route::get("/contact", [ContactController::class, "index"])->name("contact");
 
-// admin
+// admin pages
 
 Route::get("/admin/user", [AdminUserController::class, "index"])->middleware(["check", "reda"])->name("adminUser");
 
@@ -80,7 +81,7 @@ Route::get("/admin/map", [AdminMapController::class, "index"])->middleware("acce
 
 
 
-// Ressource
+// Ressource ( crud)
 Route::resource("/user", UserController::class);
 
 Route::resource("/backoff/navbar", NavbarController::class);
@@ -134,6 +135,8 @@ Route::resource("/backoff/category", CategoryController::class);
 Route::post("/send-email", [MailController::class, "sendMail"]);
  
 Route::post('/send-article/{id}', [ArticleController::class, 'sendArticle']);
+
+// dash
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

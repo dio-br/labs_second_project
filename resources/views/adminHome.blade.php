@@ -162,7 +162,7 @@
               <td>{{ $i->video }}</td>
               <td class="d-flex">
                 @can('update', $i)
-                  @include('about.edit')
+                  @include('backoff.about.edit')
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".edit6-{{ $i->id }}">Edit</button>
                 @endcan
                 

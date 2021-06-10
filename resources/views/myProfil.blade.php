@@ -24,11 +24,11 @@
             @include('backoff.myProfil.edit')
             <form method="POST" action="{{ route('logout') }}"> 
                 @csrf
-                <x-jet-responsive-nav-link href="{{ route('logout') }}" class="btn btn-danger px-5 py-2 mb-5 mx-2"
+                <button href="{{ route('logout') }}" class="btn btn-danger px-5 py-2 mb-5 mx-2"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
                     <h3 class="p-0 m-0">{{ __('Logout') }}</h3>
-                </x-jet-responsive-nav-link>
+                </button>
             </form>
         </div>
     </div>

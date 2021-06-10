@@ -51,8 +51,8 @@ class UserController extends Controller
             $user->password = Hash::make($request->password);
             }
         $user->role_id = $request->role_id;
-        $user->photo = $request->file("photo")->hashName();
-        $request->file("photo")->storePublicly("img", "public");
+        // $user->photo = $request->file("photo")->hashName();
+        // $request->file("photo")->storePublicly("img", "public");
         $user->save();
         return redirect()->route("adminUser");
     }
