@@ -13,6 +13,7 @@ use App\Models\TitreService;
 use App\Models\TitreSlogan;
 use App\Models\TitreTeam;
 use App\Models\TitreTestimonial;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminHomeController extends Controller
@@ -26,9 +27,13 @@ class AdminHomeController extends Controller
         $titreService = TitreService::all();
         $titreTeam = TitreTeam::all();
         $profilTeam = ProfilTeam::all();
+        $teams = User::where('poste_id' ,'!=' , 1)->get();
+        $teamRandom1s = $teams->random(1);
+        $teamRandom2s = $teams->random(1);
+        $ceos = User::where('poste_id' , '=' , 1)->get();
         $titreSlogan = TitreSlogan::all();
         $ready = Ready::all();
         $homeContact = HomeContact::all();
-        return view("adminhome", compact("homeContact","ready","titreSlogan","titreTeam","banner", "serviceHome", "aboutContent", "titreTestimonial", "testimonial", "titreService", "profilTeam"));
+        return view("adminhome", compact("homeContact","ready","titreSlogan","titreTeam","banner", "serviceHome", "aboutContent", "titreTestimonial", "testimonial", "titreService", "profilTeam",'teamRandom1s', 'teamRandom2s', 'ceos'));
     }
 }

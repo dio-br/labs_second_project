@@ -15,19 +15,19 @@ class ProfilTeamSeeder extends Seeder
     public function run()
     {
         DB::table("profil_teams")->insert([
+        [
+            "image" => "ceo.jpg",
+            "prenom" => "leo makaski",
+            "fonction" => 'CEO COMPANY',
+        ],
         [ 
-            "image" => "1.jpg",
+            "image" => "women.jpg",
             "prenom" => "Christine Williams",
             "fonction" => 'Project Manager',
         ],
         [
-            "image" => "2.jpg",
-            "prenom" => "Christine Williams",
-            "fonction" => 'CEO COMPANY',
-        ],
-        [
-            "image" => "3.jpg",
-            "prenom" => "Christine Williams",
+            "image" => "webmaster1.jpg",
+            "prenom" => "young fuji",
             "fonction" => 'Digital Designer',
         ],
         ]);
