@@ -14,8 +14,8 @@
     
     <!-- slider -->
     
+    @foreach ($banner as $e)
     <div id="hero-slider" class="owl-carousel">
-        @foreach ($banner as $e)
         <div class="item  hero-item" data-bg="{{ asset("/img/$e->image") }}"></div>
 
         @endforeach

@@ -3,15 +3,15 @@
 	<div class="page-section spad">
 		<div class="container">
 			<div class="row">
+				@foreach ($article as $i)
 				<div class="col-md-8 col-sm-7 blog-posts">
 					<!-- Post item -->
-				@foreach ($article as $i)
-				 @if ($i->verifications->id ===1)
+				 {{-- @if ($i->verifications->id ===1) --}}
 				 <div class="post-item">
 					<div class="post-thumbnail">
-						<img src="{{ asset("img/blog/$i->image") }}" alt="">
+						<img src="{{asset("img/blog/" . $i->image)}}" alt="">
 						<div class="post-date">
-							<h2>{{ date('d')}}</h2>
+							<h2>{{date('d')}}</h2>
 							<h3>{{ date('m-Y') }}</h3>
 						</div>
 					</div>
@@ -29,11 +29,11 @@
 							
 						</div>
 						<p>{{ $i->texte }}</p>
-						<a href="/blogpost/{{ $i->id }} class="read-more">Read More</a>
+						<a href="/blogpost/{{ $i->id }}" class="read-more">Read More</a>
 					</div>
 				</div>
 					 
-				 @endif
+				 {{-- @endif --}}
 					
 						
 				@endforeach
